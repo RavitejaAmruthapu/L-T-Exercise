@@ -1,0 +1,11 @@
+apiVersion: v1 # when we run the same it will invoke the k8s apiv1
+kind: Pod #to deploy my container based app it will talk to POD api of K8s
+metadata: #once it invoke the pod api it will give a name to your pod
+  name: tomcat #name of the pod
+spec: #here we need to define the specification about my container image
+  containers: #inside you pod which container image is goign to be deployed
+  - name: tomcat #the name of the container whcih should match with metadata.name
+    image: tomcat #it will download the image tomcat
+    ports:
+    - containerPort: 7500
+  
